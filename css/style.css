@@ -822,7 +822,6 @@ img{
 
 .about-section .timeline .timeline-item:nth-child(odd){
     padding-right: calc(50% + 50px);
-    text-align: right;
 }
 .about-section .timeline .timeline-item:nth-child(even){
     padding-left: calc(50% + 50px);
@@ -901,6 +900,7 @@ img{
     color: var(--text-black-600);
     line-height: 26px;
     margin: 15px 0 0;
+    text-transform: none !important;
 }
 /* last  */
 
