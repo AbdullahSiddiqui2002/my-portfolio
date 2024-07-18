@@ -1,29 +1,29 @@
-const styleSwitcherToggler = document.querySelector(".style-switcher-toggler");
+// const styleSwitcherToggler = document.querySelector(".style-switcher-toggler");
 
-styleSwitcherToggler.addEventListener("click", () => {
-    document.querySelector(".style-switcher").classList.toggle("open")
-})
+// styleSwitcherToggler.addEventListener("click", () => {
+//     document.querySelector(".style-switcher").classList.toggle("open")
+// })
 
-window.addEventListener("scroll", () =>{
-    if(document.querySelector(".style-switcher").classList.contains("open")){
-        document.querySelector(".style-switcher").classList.remove("open");
-    }
-})
+// window.addEventListener("scroll", () =>{
+//     if(document.querySelector(".style-switcher").classList.contains("open")){
+//         document.querySelector(".style-switcher").classList.remove("open");
+//     }
+// })
 
 
 /*------------------- theme colors -------------------  */
-const alternateStyle = document.querySelectorAll(".alternate-style");
+// const alternateStyle = document.querySelectorAll(".alternate-style");
 
-function setActiveStyle(color) {
-    alternateStyle.forEach((style) =>{
-        if(color === style.getAttribute("title")){
-            style.removeAttribute("disabled");
-        }
-        else{
-            style.setAttribute("disabled", "true")
-        }
-    })
-}
+// function setActiveStyle(color) {
+//     alternateStyle.forEach((style) =>{
+//         if(color === style.getAttribute("title")){
+//             style.removeAttribute("disabled");
+//         }
+//         else{
+//             style.setAttribute("disabled", "true")
+//         }
+//     })
+// }
 
 /*------------------- dark mode -------------------  */
 const dayNight = document.querySelector(".day-night");
