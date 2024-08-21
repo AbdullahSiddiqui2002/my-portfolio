@@ -10,22 +10,108 @@
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <link rel="stylesheet" type="text/css" href="css/responsive.css" />
     <!-- default color css  -->
-    <link rel="stylesheet" href="css/skins/color-1.css" disabled>
-    <link rel="stylesheet" href="css/style-switcher.css">
+    <link rel="stylesheet" href="css/skins/color-1.css" disabled />
+    <link rel="stylesheet" href="css/style-switcher.css" />
     <!-- theme colors -->
-    <link rel="stylesheet" class="alternate-style" title="color-1" href="/css/skins/color-1.css" disabled>
-    <link rel="stylesheet" class="alternate-style" title="color-2" href="/css/skins/color-2.css" disabled>
-    <link rel="stylesheet" class="alternate-style" title="color-3" href="/css/skins/color-3.css" disabled>
-    <link rel="stylesheet" class="alternate-style" title="color-4" href="/css/skins/color-4.css">
-    <link rel="stylesheet" class="alternate-style" title="color-5" href="/css/skins/color-5.css" disabled>
+    <link
+      rel="stylesheet"
+      class="alternate-style"
+      title="color-1"
+      href="/css/skins/color-1.css"
+      disabled
+    />
+    <link
+      rel="stylesheet"
+      class="alternate-style"
+      title="color-2"
+      href="/css/skins/color-2.css"
+      disabled
+    />
+    <link
+      rel="stylesheet"
+      class="alternate-style"
+      title="color-3"
+      href="/css/skins/color-3.css"
+      disabled
+    />
+    <link
+      rel="stylesheet"
+      class="alternate-style"
+      title="color-4"
+      href="/css/skins/color-4.css"
+    />
+    <link
+      rel="stylesheet"
+      class="alternate-style"
+      title="color-5"
+      href="/css/skins/color-5.css"
+      disabled
+    />
     <!-- fav icon  -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
-    <link rel="manifest" href="/img/site.webmanifest">
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/img/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/img/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/img/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/img/site.webmanifest" />
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="text/javascript">
+      (function () {
+        // https://dashboard.emailjs.com/admin/account
+        emailjs.init({
+          publicKey: "YL-eR4WwAx3puTWkL",
+        });
+      })();
+    </script>
+    <script type="text/javascript">
+      window.onload = function () {
+        document
+          .getElementById("contact-form")
+          .addEventListener("submit", function (event) {
+            event.preventDefault();
+            // these IDs from the previous steps
+            emailjs.sendForm("service_1kej3ht", "template_mljf74g", this).then(
+              () => {
+                // Success notification
+                Swal.fire({
+                  icon: "success",
+                  title: "Success!",
+                  text: "Your message has been sent successfully!",
+                  confirmButtonText: "OK",
+                });
+              },
+              (error) => {
+                // Error notification
+                Swal.fire({
+                  icon: "error",
+                  title: "Failed!",
+                  text: "Failed to send message, please try again later.",
+                  confirmButtonText: "OK",
+                });
+                console.error("FAILED...", error);
+              }
+            );
+          });
+      };
+    </script>
   </head>
   <body class="dark">
-
     <!-- ========== Start pre loader ========== -->
     <div class="preloader">
       <div class="box">
@@ -56,56 +142,117 @@
       <div class="close-nav-menu outer-shadow hover-in-shadow">&times;</div>
       <div class="nav-menu-inner">
         <ul>
-          <li><a href="#home" class="link-item inner-shadow active">Home</a></li>
-          <li><a href="#about" class="link-item outer-shadow hover-in-shadow">About</a></li>
-          <li><a href="#services" class="link-item outer-shadow hover-in-shadow">Services</a></li>
-          <li><a href="#portfolio" class="link-item outer-shadow hover-in-shadow">Portfolio</a></li>
+          <li>
+            <a href="#home" class="link-item inner-shadow active">Home</a>
+          </li>
+          <li>
+            <a href="#about" class="link-item outer-shadow hover-in-shadow"
+              >About</a
+            >
+          </li>
+          <li>
+            <a href="#services" class="link-item outer-shadow hover-in-shadow"
+              >Services</a
+            >
+          </li>
+          <li>
+            <a href="#portfolio" class="link-item outer-shadow hover-in-shadow"
+              >Portfolio</a
+            >
+          </li>
           <!-- <li><a href="#testimonial" class="link-item outer-shadow hover-in-shadow">Testimonial</a></li> -->
-          <li><a href="#contact" class="link-item outer-shadow hover-in-shadow">Contact</a></li>
+          <li>
+            <a href="#contact" class="link-item outer-shadow hover-in-shadow"
+              >Contact</a
+            >
+          </li>
         </ul>
       </div>
       <!-- <p class="copyright-text">&copy; 2021 This is demo</p> -->
 
-      <div class="fade-out-effect">
-
-      </div>
+      <div class="fade-out-effect"></div>
     </nav>
     <!-- end  -->
 
     <!-- home section start  -->
     <section class="home-section section active" id="home">
       <!-- effect wrap -->
-        <div class="effect-wrap">
-          <div class="effect effect-1">
-
-          </div>
-          <div class="effect effect-2">  <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div>
-          </div>
-          <div class="effect effect-3">
-          </div>
-          <div class="effect effect-4">
-          </div>
-          <div class="effect effect-5"> 
-            <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div>
-          </div>
+      <div class="effect-wrap">
+        <div class="effect effect-1"></div>
+        <div class="effect effect-2">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
         </div>
+        <div class="effect effect-3"></div>
+        <div class="effect effect-4"></div>
+        <div class="effect effect-5">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
       <!-- end -->
       <div class="container">
         <div class="row full-screen align-items-center">
           <div class="home-text">
-            <p>Hello, </p>
+            <p>Hello,</p>
             <!-- ========== Start typing animation ========== -->
             <div id="auto-typing-animation">
-              <p>I'm <span class="typed-text"></span><span class="cursor">&nbsp;</span></p>
+              <p>
+                I'm <span class="typed-text"></span
+                ><span class="cursor">&nbsp;</span>
+              </p>
             </div>
             <!-- ========== End typing animation ========== -->
             <h1>Web Designer & Developer</h1>
-            <a href="#about" class="link-item btn-1 outer-shadow hover-in-shadow">More About Me</a>
+            <a
+              href="#about"
+              class="link-item btn-1 outer-shadow hover-in-shadow"
+              >More About Me</a
+            >
           </div>
 
           <div class="home-image">
             <div class="img-box inner-shadow">
-              <img src="./img/my-pic.png" class="outer-shadow" alt="profile-pic" srcset="">
+              <img
+                src="./img/my-pic.png"
+                class="outer-shadow"
+                alt="profile-pic"
+                srcset=""
+              />
             </div>
           </div>
         </div>
@@ -135,101 +282,170 @@
                 <a href="https://www.linkedin.com/in/abdullah-siddiqui2002/" target="_nextTab" class="outer-shadow hover-in-shadow link-card" data-tilt data-tilt-scale="1.1"><i class="fab fa-linkedin"></i></a>
               </div>
             </div> -->
-          <div class="about-info" style="text-align: center;">
+          <div class="about-info" style="text-align: center">
             <p class="about-info-inner">
-              <!-- content will fetch from  "TODO: js/autoTypingAnimation " -->
+              <span>Hi, I am Abdullah Siddiqui</span> <br /><br />
+              As a frontend developer with extensive experience, I specialize in
+              crafting visually appealing and user-friendly websites. Proficient
+              in HTML, CSS, JavaScript, Bootstrap, and jQuery, I have
+              successfully delivered numerous projects, ensuring optimal
+              functionality and aesthetics. <br /><br />
+              My backend skills in SQL Server and Asp.Net (MVC) complement my
+              frontend expertise, enabling me to create seamless, end-to-end
+              solutions. <br /><br />
+              With a track record of delivering high-quality work and a
+              commitment to staying updated with the latest technologies, I am
+              well-equipped to meet your project requirements effectively.
             </p>
             <!-- this is a just demo text  -->
 
             <!-- <span>Hi, this is a demo name</span>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit eius officia ea ut vonsectetur adipisicing elit. Illo voluptatum iste, tempora rem obcaecati omnis delectus sunt, consequuntur, et ut quasi aperiam assumenda! <br><br> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex beatae reprehenderit vero maiores dignissimos error vitae, optio inventore explicabo quia officiis magni delectus? -->
 
-
-            <a href="cv.pdf" class="btn-1 outer-shadow hover-in-shadow" target="next_page">Download CV</a>
-            <a href="#contact" class="link-item btn-1 outer-shadow hover-in-shadow">Hire Me</a>
+            <a
+              href="My_Resume.pdf"
+              class="btn-1 outer-shadow hover-in-shadow"
+              target="next_page"
+              >Download CV</a
+            >
+            <a
+              href="#contact"
+              class="link-item btn-1 outer-shadow hover-in-shadow"
+              >Hire Me</a
+            >
             <div class="social-links">
-
-                <a href="https://www.facebook.com/profile.php?id=100024702802375&sfnsn=scwspwa&mibextid=RUbZ1f" target="_nextTab" class="outer-shadow hover-in-shadow link-card" data-tilt data-tilt-scale="1.1"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://www.youtube.com/@abdullahsiddiqui348" target="_nextTab" class="outer-shadow hover-in-shadow link-card" data-tilt data-tilt-scale="1.1"><i class="fab fa-youtube"></i></a>
-                <a href="https://github.com/AbdullahSiddiqui2002" target="_nextTab" class="outer-shadow hover-in-shadow link-card" data-tilt data-tilt-scale="1.1"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/abdullah-siddiqui2002/" target="_nextTab" class="outer-shadow hover-in-shadow link-card" data-tilt data-tilt-scale="1.1"><i class="fab fa-linkedin"></i></a>
-              </div>
+              <a
+                href="https://www.facebook.com/profile.php?id=100024702802375&sfnsn=scwspwa&mibextid=RUbZ1f"
+                target="_nextTab"
+                class="outer-shadow hover-in-shadow link-card"
+                data-tilt
+                data-tilt-scale="1.1"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a
+                href="https://www.youtube.com/@abdullahsiddiqui348"
+                target="_nextTab"
+                class="outer-shadow hover-in-shadow link-card"
+                data-tilt
+                data-tilt-scale="1.1"
+                ><i class="fab fa-youtube"></i
+              ></a>
+              <a
+                href="https://github.com/AbdullahSiddiqui2002"
+                target="_nextTab"
+                class="outer-shadow hover-in-shadow link-card"
+                data-tilt
+                data-tilt-scale="1.1"
+                ><i class="fab fa-github"></i
+              ></a>
+              <a
+                href="https://www.linkedin.com/in/abdullah-siddiqui2002/"
+                target="_nextTab"
+                class="outer-shadow hover-in-shadow link-card"
+                data-tilt
+                data-tilt-scale="1.1"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+            </div>
           </div>
         </div>
         <!-- about section start -->
         <div class="row">
           <div class="about-tabs">
-            <span class="tab-item outer-shadow active" data-target = ".skills">skills</span>
-            <span class="tab-item" data-target = ".experience">experience</span>
-            <span class="tab-item" data-target = ".education">education</span>
+            <span class="tab-item outer-shadow active" data-target=".skills"
+              >skills</span
+            >
+            <span class="tab-item" data-target=".experience">experience</span>
+            <span class="tab-item" data-target=".education">education</span>
           </div>
         </div>
-        
+
         <!-- end -->
         <!-- skill section start  -->
         <div class="row">
           <div class="skills tab-content active">
             <!-- skill item -->
-            <div class="row">
+            <div class="skills-section">
+              <div class="skills-container">
+                <div class="skills-box">
+                  <div class="skills-title">
+                    <div class="skills-img">
+                      <img
+                        src="img/skills/html-5.png"
+                        alt=""
+                        class="skills-icons"
+                      />
+                    </div>
+                    <h3>HTML 5</h3>
+                  </div>
+                  
+                </div>
 
-              <!-- ========== Start skills ========== -->
-              <div class="skill-item">
-                <p>HTML</p>
-                <div class="progress inner-shadow">
-                  <div class="progress-bar" style="width: calc(95% - 14px)">
-                    <span>95%</span>
+                <div class="skills-box">
+                  <div class="skills-title">
+                    <div class="skills-img">
+                      <img
+                        src="img/skills/css-3.png"
+                        alt=""
+                        class="skills-icons"
+                      />
+                    </div>
+                    <h3>CSS3</h3>
                   </div>
                 </div>
-              </div>
 
-              
-              <div class="skill-item">
-                <p>JavaScript</p>
-                <div class="progress inner-shadow">
-                  <div class="progress-bar" style="width: calc(75% - 14px);">
-                    <span>75%</span>
+                <div class="skills-box">
+                  <div class="skills-title">
+                    <div class="skills-img">
+                      <img
+                        src="img/skills/js.png"
+                        alt=""
+                        class="skills-icons"
+                      />
+                    </div>
+                    <h3>JAVASCRIPT</h3>
                   </div>
                 </div>
-              </div>
-              
-              
-              <div class="skill-item">
-                <p>PHP LARAVEL</p>
-                <div class="progress inner-shadow">
-                  <div class="progress-bar" style="width: calc(70% - 14px);">
-                    <span>70%</span>
-                  </div>
-                </div>
-              </div>
-              
-              
-              <div class="skill-item">
-                <p>Bootstrap</p>
-                <div class="progress inner-shadow">
-                  <div class="progress-bar" style="width: calc(90% - 14px);">
-                    <span>80%</span>
-                  </div>
-                </div>
-              </div>
 
-              <div class="skill-item">
-                <p>Css</p>
-                <div class="progress inner-shadow">
-                  <div class="progress-bar" style="width: calc(90% - 14px);">
-                    <span>90%</span>
+                <div class="skills-box">
+                  <div class="skills-title">
+                    <div class="skills-img">
+                      <img
+                        src="img/skills/php.png"
+                        alt=""
+                        class="skills-icons"
+                      />
+                    </div>
+                    <h3>Php</h3>
                   </div>
                 </div>
-              </div>
 
-              <div class="skill-item">
-                <p>JQuery</p>
-                <div class="progress inner-shadow">
-                  <div class="progress-bar" style="width: calc(95% - 14px);">
-                    <span>95%</span>
+                <div class="skills-box">
+                  <div class="skills-title">
+                    <div class="skills-img">
+                      <img
+                        src="img/skills/c-sharp.png"
+                        alt=""
+                        class="skills-icons"
+                      />
+                    </div>
+                    <h3>C#</h3>
+                  </div>
+                </div>
+
+                <div class="skills-box">
+                  <div class="skills-title">
+                    <div class="skills-img">
+                      <img
+                        src="img/skills/social (1).png"
+                        alt=""
+                        class="skills-icons"
+                      />
+                    </div>
+                    <h3>Asp.Net MVC</h3>
                   </div>
                 </div>
               </div>
-              <!-- ========== End skills ========== -->              
             </div>
             <!-- end -->
           </div>
@@ -242,39 +458,66 @@
             <div class="row">
               <div class="timeline">
                 <div class="row">
-                  
                   <!-- time line items  -->
                   <div class="timeline-item">
                     <div class="timeline-item-inner outer-shadow">
-                      <img class="icon" src="./img/experience/xera.jpg" alt="">
-                      <img style="width: 70px; height: 70px; border-radius: 10px;" src="./img/experience/xera.jpg" alt="">
-                      <h3 style="margin-top: 5px;">Junior Frontend developer</h3>
+                      <img
+                        class="icon"
+                        src="./img/experience/xera.jpg"
+                        alt=""
+                      />
+                      <img
+                        style="width: 70px; height: 70px; border-radius: 10px"
+                        src="./img/experience/xera.jpg"
+                        alt=""
+                      />
+                      <h3 style="margin-top: 5px">Junior Frontend developer</h3>
                       <h3>Xera Marketing</h3>
-                      <span style="font-family: Arial, Helvetica, sans-serif;">Feb 2024 - Present</span>
-                  
-                      <p>I've joined an amazing team where I'll be putting my skills in HTML, CSS, and JavaScript to work on exciting projects.</p>
-                  
-                      <p>Skills: Html, CSS, JavaScript, Bootstrap</p>
-                    </div>
-                  </div>
-                  
-                  <!-- end  -->
-                  <!-- time line items  -->
-                  <div class="timeline-item">
-                    <div class="timeline-item-inner outer-shadow">
-                      <img class="icon" src="./img/experience/xera.jpg" alt="">
-                      <img style="width: 70px; height: 70px; border-radius: 10px;" src="./img/experience/xera.jpg" alt="">
-                      <h3 style="margin-top: 5px;">Frontend developer Intern</h3>
-                      <h3>Xera Marketing</h3>
-                      <span style="font-family: Arial, Helvetica, sans-serif;">Jan 2024 - Feb 2024</span>
-                      
-                      <p>During this enriching experience from January to February 2024, I delved deep into HTML, CSS, and JavaScript, honing my
-                      skills and exploring various facets of web development.</p>
+                      <span style="font-family: Arial, Helvetica, sans-serif"
+                        >Feb 2024 - Present</span
+                      >
+
+                      <p>
+                        I've joined an amazing team where I'll be putting my
+                        skills in HTML, CSS, and JavaScript to work on exciting
+                        projects.
+                      </p>
 
                       <p>Skills: Html, CSS, JavaScript, Bootstrap</p>
                     </div>
                   </div>
-                  
+
+                  <!-- end  -->
+                  <!-- time line items  -->
+                  <div class="timeline-item">
+                    <div class="timeline-item-inner outer-shadow">
+                      <img
+                        class="icon"
+                        src="./img/experience/xera.jpg"
+                        alt=""
+                      />
+                      <img
+                        style="width: 70px; height: 70px; border-radius: 10px"
+                        src="./img/experience/xera.jpg"
+                        alt=""
+                      />
+                      <h3 style="margin-top: 5px">Frontend developer Intern</h3>
+                      <h3>Xera Marketing</h3>
+                      <span style="font-family: Arial, Helvetica, sans-serif"
+                        >Jan 2024 - Feb 2024</span
+                      >
+
+                      <p>
+                        During this enriching experience from January to
+                        February 2024, I delved deep into HTML, CSS, and
+                        JavaScript, honing my skills and exploring various
+                        facets of web development.
+                      </p>
+
+                      <p>Skills: Html, CSS, JavaScript, Bootstrap</p>
+                    </div>
+                  </div>
+
                   <!-- end  -->
                 </div>
               </div>
@@ -292,69 +535,157 @@
                   <!-- time line items  -->
                   <div class="timeline-item">
                     <div class="timeline-item-inner outer-shadow">
-                      <img class="icon" src="./img/education/institute.jpg" alt="">
-                      <img style="width: 70px; height: 70px; border-radius: 10px;" src="./img/education/institute.jpg" alt="">
-                      <h3 style="margin-top: 5px;">Aptech Learning, North Nazimabad, Karachi</h3>
+                      <img
+                        class="icon"
+                        src="./img/education/institute.jpg"
+                        alt=""
+                      />
+                      <img
+                        style="width: 70px; height: 70px; border-radius: 10px"
+                        src="./img/education/institute.jpg"
+                        alt=""
+                      />
+                      <h3 style="margin-top: 5px">
+                        Aptech Learning, North Nazimabad, Karachi
+                      </h3>
                       <h3>Advanced Diploma in Software Engineering</h3>
-                      <span style="font-family: Arial, Helvetica, sans-serif;">2023 - 2026</span>
-                  
-                      <span style="text-align: center; font-family: Arial, Helvetica, sans-serif;">Grade: 88%</span>
-                  
-                      <p>I am currently pursuing a advanced diploma in Software Engineering at Aptech Learning.
-                        I have completed 3 semesters. I have taken courses in Html, Css, JavaScript, Mysql, Php Laravel, Sql Server, C#, Asp.net, among others.</p>
+                      <span style="font-family: Arial, Helvetica, sans-serif"
+                        >2023 - 2026</span
+                      >
+
+                      <span
+                        style="
+                          text-align: center;
+                          font-family: Arial, Helvetica, sans-serif;
+                        "
+                        >Grade: 88%</span
+                      >
+
+                      <p>
+                        I am currently pursuing a advanced diploma in Software
+                        Engineering at Aptech Learning. I have completed 3
+                        semesters. I have taken courses in Html, Css,
+                        JavaScript, Mysql, Php Laravel, Sql Server, C#, Asp.net,
+                        among others.
+                      </p>
                     </div>
                   </div>
-                  
+
                   <!-- end  -->
                   <!-- time line items  -->
                   <div class="timeline-item">
                     <div class="timeline-item-inner outer-shadow">
-                      <img class="icon" src="./img/education/university.jpg" alt="">
-                      <img style="width: 70px; height: 70px; border-radius: 10px;" src="./img/education/university.jpg" alt="">
-                      <h3 style="margin-top: 5px;">Umaer Basha Institute of Science And Technology, University of Karachi</h3>
+                      <img
+                        class="icon"
+                        src="./img/education/university.jpg"
+                        alt=""
+                      />
+                      <img
+                        style="width: 70px; height: 70px; border-radius: 10px"
+                        src="./img/education/university.jpg"
+                        alt=""
+                      />
+                      <h3 style="margin-top: 5px">
+                        Umaer Basha Institute of Science And Technology,
+                        University of Karachi
+                      </h3>
                       <h3>Bachelor of Science - BS, Software Engineering</h3>
-                      <span style="font-family: Arial, Helvetica, sans-serif;">2022 - 2026</span>
-                      
-                      <span style="text-align: center; font-family: Arial, Helvetica, sans-serif;">Grade: 3.23 CGPA out of 4</span>
-                      
-                      <p>I am currently pursuing a Bachelor's degree in Software Engineering at Umaer Basha Institute of Science And Technology.
-                      I have completed 5 semesters. I have taken courses in Data Structures, Algorithms, Object-Oriented Programming, Database
-                      Management Systems, Operating Systems, and Computer Networks, among others.</p>
+                      <span style="font-family: Arial, Helvetica, sans-serif"
+                        >2022 - 2026</span
+                      >
+
+                      <span
+                        style="
+                          text-align: center;
+                          font-family: Arial, Helvetica, sans-serif;
+                        "
+                        >Grade: 3.23 CGPA out of 4</span
+                      >
+
+                      <p>
+                        I am currently pursuing a Bachelor's degree in Software
+                        Engineering at Umaer Basha Institute of Science And
+                        Technology. I have completed 5 semesters. I have taken
+                        courses in Data Structures, Algorithms, Object-Oriented
+                        Programming, Database Management Systems, Operating
+                        Systems, and Computer Networks, among others.
+                      </p>
                     </div>
                   </div>
-                  
+
                   <!-- end  -->
                   <!-- time line items  -->
                   <div class="timeline-item">
                     <div class="timeline-item-inner outer-shadow">
-                      <img class="icon" src="./img/education/college.jpg" alt="">
-                      <img style="width: 70px; height: 70px; border-radius: 10px;" src="./img/education/college.jpg" alt="">
-                      <h3 style="margin-top: 5px;">Government Dehli College Hussainabad</h3>
+                      <img
+                        class="icon"
+                        src="./img/education/college.jpg"
+                        alt=""
+                      />
+                      <img
+                        style="width: 70px; height: 70px; border-radius: 10px"
+                        src="./img/education/college.jpg"
+                        alt=""
+                      />
+                      <h3 style="margin-top: 5px">
+                        Government Dehli College Hussainabad
+                      </h3>
                       <h3>Pre-Engineering</h3>
-                      <span style="font-family: Arial, Helvetica, sans-serif;">2019 - 2021</span>
-                      
-                      <span style="text-align: center; font-family: Arial, Helvetica, sans-serif;">Grade: 80%</span>
-                      
-                      <p>I completed my class 12 High school education at Government Dehli College, where I studied Pre-Engineering.</p>
+                      <span style="font-family: Arial, Helvetica, sans-serif"
+                        >2019 - 2021</span
+                      >
+
+                      <span
+                        style="
+                          text-align: center;
+                          font-family: Arial, Helvetica, sans-serif;
+                        "
+                        >Grade: 80%</span
+                      >
+
+                      <p>
+                        I completed my class 12 High school education at
+                        Government Dehli College, where I studied
+                        Pre-Engineering.
+                      </p>
                     </div>
                   </div>
-                  
+
                   <!-- end  -->
                   <!-- time line items  -->
                   <div class="timeline-item">
                     <div class="timeline-item-inner outer-shadow">
-                      <img class="icon" src="./img/education/school.jpg" alt="">
-                      <img style="width: 70px; height: 70px; border-radius: 10px;" src="./img/education/school.jpg" alt="">
-                      <h3 style="margin-top: 10px;">Asra Public School</h3>
+                      <img
+                        class="icon"
+                        src="./img/education/school.jpg"
+                        alt=""
+                      />
+                      <img
+                        style="width: 70px; height: 70px; border-radius: 10px"
+                        src="./img/education/school.jpg"
+                        alt=""
+                      />
+                      <h3 style="margin-top: 10px">Asra Public School</h3>
                       <h3>Computer Science</h3>
-                      <span style="font-family: Arial, Helvetica, sans-serif;">2017 - 2019</span>
-                      
-                      <span style="text-align: center; font-family: Arial, Helvetica, sans-serif;">Grade: 86%</span>
-  
-                      <p>I completed my class 10 school education at Asra Public School, where I studied Computer Science.</p>
+                      <span style="font-family: Arial, Helvetica, sans-serif"
+                        >2017 - 2019</span
+                      >
+
+                      <span
+                        style="
+                          text-align: center;
+                          font-family: Arial, Helvetica, sans-serif;
+                        "
+                        >Grade: 86%</span
+                      >
+
+                      <p>
+                        I completed my class 10 school education at Asra Public
+                        School, where I studied Computer Science.
+                      </p>
                     </div>
                   </div>
-                  
+
                   <!-- end  -->
                 </div>
               </div>
@@ -362,7 +693,6 @@
           </div>
         </div>
         <!-- education end -->
-
       </div>
     </section>
     <!-- end  -->
@@ -379,133 +709,188 @@
         </div>
         <div class="row">
           <!-- ========== Start service item ========== -->
-              <div class="service-item card" data-tilt data-tilt-scale="1.1">
-                <div class="service-item-inner outer-shadow">
-                  <div class="icon inner-shadow">
-                    <i class="fas fa-mobile-alt"></i>
-                  </div>
-                  <h3>Responsive design</h3>
-                  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo cum eos facere.</p>
-                </div>
+          <div class="service-item card" data-tilt data-tilt-scale="1.1">
+            <div class="service-item-inner outer-shadow">
+              <div class="icon inner-shadow">
+                <i class="fas fa-mobile-alt"></i>
               </div>
+              <h3>Responsive design</h3>
+              <p>
+                I design websites that adapt seamlessly to any device, providing
+                an optimal viewing experience on desktops, tablets, and
+                smartphones.
+              </p>
+            </div>
+          </div>
 
-              
-              <div class="service-item card" data-tilt data-tilt-scale="1.1"> 
-                <div class="service-item-inner outer-shadow">
-                  <div class="icon inner-shadow">
-                    <i class="fas fa-laptop-code"></i>
-                  </div>
-                  <h3>Web design</h3>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta qui libero voluptates eligendi?.</p>
-                </div>
+          <div class="service-item card" data-tilt data-tilt-scale="1.1">
+            <div class="service-item-inner outer-shadow">
+              <div class="icon inner-shadow">
+                <i class="fas fa-laptop-code"></i>
               </div>
+              <h3>Web design</h3>
+              <p>
+                I create visually appealing and user-friendly designs that align
+                with your brand, ensuring a captivating and intuitive experience
+                for visitors.
+              </p>
+            </div>
+          </div>
 
-              
-              <div class="service-item card" data-tilt data-tilt-scale="1.1">
-                <div class="service-item-inner outer-shadow">
-                  <div class="icon inner-shadow">
-                    <i class="fas fa-palette"></i>
-                  </div>
-                  <h3>Graphic design</h3>
-                  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo cum eos facere.</p>
-                </div>
+          <div class="service-item card" data-tilt data-tilt-scale="1.1">
+            <div class="service-item-inner outer-shadow">
+              <div class="icon inner-shadow">
+                <i class="fas fa-code"></i>
               </div>
+              <h3>Web Development</h3>
+              <p>
+                I build robust web applications with clean, efficient code,
+                ensuring your site is secure, scalable, and performs flawlessly.
+              </p>
+            </div>
+          </div>
 
-              <div class="service-item card" data-tilt data-tilt-scale="1.1">
-                <div class="service-item-inner outer-shadow">
-                  <div class="icon inner-shadow">
-                    <i class="fas fa-code"></i>
-                  </div>
-                  <h3>Clean code</h3>
-                  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo cum eos facere.</p>
-                </div>
+          <div class="service-item card" data-tilt data-tilt-scale="1.1">
+            <div class="service-item-inner outer-shadow">
+              <div class="icon inner-shadow">
+                <i class="fas fa-file-code"></i>
               </div>
+              <h3>Clean code</h3>
+              <p>
+                I prioritize writing clean, well-structured code, making your
+                website easy to maintain, update, and scale as your business
+                grows.
+              </p>
+            </div>
+          </div>
 
-              <div class="service-item card" data-tilt data-tilt-scale="1.1">
-                <div class="service-item-inner outer-shadow">
-                  <div class="icon inner-shadow">
-                    <i class="fas fa-search"></i>
-                  </div>
-                  <h3>SEO Marketing</h3>
-                  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo cum eos facere.</p>
-                </div>
+          <div class="service-item card" data-tilt data-tilt-scale="1.1">
+            <div class="service-item-inner outer-shadow">
+              <div class="icon inner-shadow">
+                <i class="fas fa-tasks"></i>
               </div>
+              <h3>Content Management</h3>
+              <p>
+                I simplify content updates with user-friendly content management
+                systems, allowing you to keep your site fresh and engaging.
+              </p>
+            </div>
+          </div>
 
-              <div class="service-item card" data-tilt data-tilt-scale="1.1">
-                <div class="service-item-inner outer-shadow">
-                  <div class="icon inner-shadow">
-                    <i class="fas fa-bullhorn"></i>
-                  </div>
-                  <h3>Great Support</h3>
-                  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo cum eos facere.</p>
-                </div>
+          <div class="service-item card" data-tilt data-tilt-scale="1.1">
+            <div class="service-item-inner outer-shadow">
+              <div class="icon inner-shadow">
+                <i class="fas fa-life-ring"></i>
               </div>
+              <h3>Technical Support</h3>
+              <p>
+                I offer ongoing technical support to keep your website running
+                smoothly, handling issues promptly and performing regular
+                maintenance.
+              </p>
+            </div>
+          </div>
 
           <!-- ========== End service item ========== -->
         </div>
       </div>
-    </div>    
+    </div>
     <!-- ========== End service section ========== -->
 
-
     <!-- ========== Start portfolio section ========== -->
-        <section class="portfolio-section section" id="portfolio">
-          <div class="container">
-            <div class="row">
-              <div class="section-title">
-                <div class="data-heading">portfolio</div>
-                <h2>Latest Works</h2>
+    <section class="portfolio-section section" id="portfolio">
+      <div class="container">
+        <div class="row">
+          <div class="section-title">
+            <div class="data-heading">portfolio</div>
+            <h2>Latest Works</h2>
+          </div>
+        </div>
+        <!-- ========== Start portfolio filter========== -->
+        <div class="row">
+          <div class="portfolio-filter">
+            <span class="filter-item outer-shadow active" data-target="all"
+              >All</span
+            >
+            <span class="filter-item" data-target="static-website"
+              >Static Websites</span
+            >
+            <span class="filter-item" data-target="dynamic-website"
+              >Dynamic Websites</span
+            >
+          </div>
+        </div>
+        <!-- ========== End portfolio filter========== -->
+
+        <!-- ========== Start portfolio items ========== -->
+        <div class="row portfolio-items">
+          <!-- ========== Start portfolio item ========== -->
+          <div class="portfolio-item" data-category="static-website">
+            <div class="portfolio-item-inner outer-shadow">
+              <div class="portfolio-item-image">
+                <img
+                  src="img/portfolio/thumb/project-1.png"
+                  alt="portfolio"
+                  data-screenshots="img/portfolio/large/project-1/1.png,
+                        img/portfolio/large/project-1/2.png,
+                        img/portfolio/large/project-1/3.png,
+                        img/portfolio/large/project-1/4.png"
+                />
+
+                <!-- view project button  -->
+                <span class="view-project">view project</span>
               </div>
-            </div>
-            <!-- ========== Start portfolio filter========== -->
+              <p class="portfolio-item-title">Hotel Management Website</p>
+              <!-- ========== Start portfolio item details ========== -->
+              <div class="portfolio-item-details">
                 <div class="row">
-                  <div class="portfolio-filter">
-                    <span class="filter-item outer-shadow active" data-target="all">All</span>
-                    <span class="filter-item" data-target="static-website">Static Websites</span>
-                    <span class="filter-item" data-target="dynamic-website">Dynamic Websites</span>
+                  <div class="description">
+                    <h3>Project brief:</h3>
+                    <p>
+                      The Hotel Bright website offers a comprehensive and
+                      visually appealing online presence for a luxury hotel.
+                      Developed using HTML, CSS, JavaScript, Bootstrap, and
+                      jQuery, it features a clean and responsive design to
+                      ensure a seamless user experience across all devices. The
+                      website is designed to attract potential guests by
+                      providing an easy-to-navigate interface, elegant visuals,
+                      and comprehensive information about the hotel’s offerings.
+                    </p>
+                  </div>
+                  <div class="info">
+                    <h3>Project info</h3>
+                    <ul>
+                      <li>Date - <span>2023</span></li>
+                      <li>
+                        Tools - <span>html, css, js, bootstrap, jquery</span>
+                      </li>
+                      <li>
+                        Web -
+                        <span
+                          ><a
+                            href="https://hotelbright.netlify.app/"
+                            id="link"
+                            target="_next"
+                            >www.hotelbright.com</a
+                          ></span
+                        >
+                      </li>
+                    </ul>
                   </div>
                 </div>
-            <!-- ========== End portfolio filter========== -->
-
-            <!-- ========== Start portfolio items ========== -->
-                <div class="row portfolio-items">
-                  <!-- ========== Start portfolio item ========== -->
-                  <div class="portfolio-item" data-category="static-website">
-                    <div class="portfolio-item-inner outer-shadow">
-                      <div class="portfolio-item-image">
-                        <img src="img/portfolio/thumb/project-1.png" alt="portfolio" data-screenshots="img/portfolio/large/project-1/1.png",
-                        >
-
-                        <!-- view project button  -->
-                        <span class="view-project">view project</span>
-                      </div>
-                      <p class="portfolio-item-title">Hotel Management Website</p>
-                      <!-- ========== Start portfolio item details ========== -->
-                          <div class="portfolio-item-details">
-                            <div class="row">
-                              <div class="description">
-                                <h3>Project brief: </h3>
-                                <p>The Hotel Bright website offers a comprehensive and visually appealing online presence for a luxury hotel. Developed using HTML, CSS, JavaScript, Bootstrap, and jQuery, it features a clean and responsive design to ensure a seamless user experience across all devices. The website is designed to attract potential guests by providing an easy-to-navigate interface, elegant visuals, and comprehensive information about the hotel’s offerings.</p>
-                              </div>
-                              <div class="info">
-                                <h3>Project info</h3>
-                                <ul>
-                                  <li>Date - <span>2023</span></li>
-                                  <li>Tools - <span>html, css, js, bootstrap, jquery</span></li>
-                                  <li>Web - <span><a href="https://hotelbright.netlify.app/" id="link" target="_next">www.hotelbright.com</a></span></li>
-                                </ul>
-                              </div>
-                            </div>
-                          </div>
-                      <!-- ========== End portfolio item details ========== -->
-                    </div>
-                  </div>
-                  <!-- ========== End portfolio item ========== -->
-                  <!-- ========== Start portfolio item ========== -->
-                  <div class="portfolio-item" data-category="dynamic-website">
-                    <div class="portfolio-item-inner outer-shadow">
-                      <div class="portfolio-item-image">
-                        <img src="img/portfolio/thumb/project-2.png" alt="portfolio" data-screenshots="img/portfolio/large/project-2/1.png, 
+              </div>
+              <!-- ========== End portfolio item details ========== -->
+            </div>
+          </div>
+          <!-- ========== End portfolio item ========== -->
+          <!-- ========== Start portfolio item ========== -->
+          <div class="portfolio-item" data-category="dynamic-website">
+            <div class="portfolio-item-inner outer-shadow">
+              <div class="portfolio-item-image">
+                <img
+                  src="img/portfolio/thumb/project-2.png"
+                  alt="portfolio"
+                  data-screenshots="img/portfolio/large/project-2/1.png, 
                         img/portfolio/large/project-2/2.png,
                         img/portfolio/large/project-2/3.png,
                         img/portfolio/large/project-2/4.png,
@@ -525,39 +910,57 @@
                         img/portfolio/large/project-2/18.png,
                         img/portfolio/large/project-2/19.png,
                         img/portfolio/large/project-2/20.png"
-                        >
+                />
 
-                        <!-- view project button  -->
-                        <span class="view-project">view project</span>
-                      </div>
-                      <p class="portfolio-item-title">Courier Management System</p>
-                      <!-- ========== Start portfolio item details ========== -->
-                          <div class="portfolio-item-details">
-                            <div class="row">
-                              <div class="description">
-                                <h3>Project brief: </h3>
-                                <p>The Courier Management System (CMS) is a powerful tool designed to make courier services more efficient and user-friendly. It has several advanced features to meet the needs of both courier companies and customers.</p>
-                              </div>
-                              <div class="info">
-                                <h3>Project info</h3>
-                                <ul>
-                                  <li>Date - <span>2024</span></li>
-                                  <li>Tools - <span>html, css, Js, Mysql, Php</span></li>
-                                  <li>Web - <span><a href="https://github.com/AbdullahSiddiqui2002/express_delivery" id="link" target="_next">www.cms.com</a></span></li>
-                                </ul>
-                              </div>
-                            </div>
-                          </div>
-                      <!-- ========== End portfolio item details ========== -->
-                    </div>
+                <!-- view project button  -->
+                <span class="view-project">view project</span>
+              </div>
+              <p class="portfolio-item-title">Courier Management System</p>
+              <!-- ========== Start portfolio item details ========== -->
+              <div class="portfolio-item-details">
+                <div class="row">
+                  <div class="description">
+                    <h3>Project brief:</h3>
+                    <p>
+                      The Courier Management System (CMS) is a powerful tool
+                      designed to make courier services more efficient and
+                      user-friendly. It has several advanced features to meet
+                      the needs of both courier companies and customers.
+                    </p>
                   </div>
-                  <!-- ========== End portfolio item ========== -->
+                  <div class="info">
+                    <h3>Project info</h3>
+                    <ul>
+                      <li>Date - <span>2024</span></li>
+                      <li>Tools - <span>html, css, Js, Mysql, Php</span></li>
+                      <li>
+                        Web -
+                        <span
+                          ><a
+                            href="https://github.com/AbdullahSiddiqui2002/express_delivery"
+                            id="link"
+                            target="_next"
+                            >www.cms.com</a
+                          ></span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- ========== End portfolio item details ========== -->
+            </div>
+          </div>
+          <!-- ========== End portfolio item ========== -->
 
-                  <!-- ========== Start portfolio item ========== -->
-                  <div class="portfolio-item" data-category="dynamic-website">
-                    <div class="portfolio-item-inner outer-shadow">
-                      <div class="portfolio-item-image">
-                        <img src="img/portfolio/thumb/project-3.png" alt="portfolio" data-screenshots="
+          <!-- ========== Start portfolio item ========== -->
+          <div class="portfolio-item" data-category="dynamic-website">
+            <div class="portfolio-item-inner outer-shadow">
+              <div class="portfolio-item-image">
+                <img
+                  src="img/portfolio/thumb/project-3.png"
+                  alt="portfolio"
+                  data-screenshots="
                         img/portfolio/large/project-3/1.png, 
                         img/portfolio/large/project-3/2.png,
                         img/portfolio/large/project-3/3.png,
@@ -567,39 +970,56 @@
                         img/portfolio/large/project-3/7.png,
                         img/portfolio/large/project-3/8.png,
                         img/portfolio/large/project-3/9.png
-                        ">
+                        "
+                />
 
-                        <!-- view project button  -->
-                        <span class="view-project">view project</span>
-                      </div>
-                      <p class="portfolio-item-title">Online Grocery Store</p>
-                      <!-- ========== Start portfolio item details ========== -->
-                          <div class="portfolio-item-details">
-                            <div class="row">
-                              <div class="description">
-                                <h3>Project brief: </h3>
-                                <p>The Fruitables website is a vibrant and user-friendly platform designed for showcasing and selling organic fruits and vegetables. Developed using HTML, CSS, JavaScript, MySQL, and PHP Laravel, it offers a seamless and efficient shopping experience for customers.</p>
-                              </div>
-                              <div class="info">
-                                <h3>project Info</h3>
-                                <ul>
-                                  <li>Date - <span>2024</span></li>
-                                  <li>Tools - <span>html, css, js, mysql, php laravel</span></li>
-                                  <li>Web - <span><a href="https://github.com/AbdullahSiddiqui2002/Fruitables_laravel-project" id="link" target="_next">www.grocerystore.com</a></span></li>
-                                </ul>
-                              </div>
-                            </div>
-                          </div>
-                      <!-- ========== End portfolio item details ========== -->
-                    </div>
+                <!-- view project button  -->
+                <span class="view-project">view project</span>
+              </div>
+              <p class="portfolio-item-title">Online Grocery Store</p>
+              <!-- ========== Start portfolio item details ========== -->
+              <div class="portfolio-item-details">
+                <div class="row">
+                  <div class="description">
+                    <h3>Project brief:</h3>
+                    <p>
+                      The Fruitables website is a vibrant and user-friendly
+                      platform designed for showcasing and selling organic
+                      fruits and vegetables. Developed using HTML, CSS,
+                      JavaScript, MySQL, and PHP Laravel, it offers a seamless
+                      and efficient shopping experience for customers.
+                    </p>
                   </div>
-                  <!-- ========== End portfolio item ========== -->
-                  
+                  <div class="info">
+                    <h3>project Info</h3>
+                    <ul>
+                      <li>Date - <span>2024</span></li>
+                      <li>
+                        Tools - <span>html, css, js, mysql, php laravel</span>
+                      </li>
+                      <li>
+                        Web -
+                        <span
+                          ><a
+                            href="https://github.com/AbdullahSiddiqui2002/Fruitables_laravel-project"
+                            id="link"
+                            target="_next"
+                            >www.grocerystore.com</a
+                          ></span
+                        >
+                      </li>
+                    </ul>
+                  </div>
                 </div>
-            <!-- ========== End portfolio items ========== -->
-            
+              </div>
+              <!-- ========== End portfolio item details ========== -->
+            </div>
           </div>
-        </section>
+          <!-- ========== End portfolio item ========== -->
+        </div>
+        <!-- ========== End portfolio items ========== -->
+      </div>
+    </section>
     <!-- ========== End portfolio section ========== -->
 
     <!-- ========== Start contact section ========== -->
@@ -613,27 +1033,55 @@
         </div>
         <div class="row">
           <!-- ========== Start contact item ========== -->
-          <div class="contact-item contact-card" data-tilt data-tilt-axis="x" data-tilt data-tilt-scale="1.1">
+          <div
+            class="contact-item contact-card"
+            data-tilt
+            data-tilt-axis="x"
+            data-tilt
+            data-tilt-scale="1.1"
+          >
             <div class="contact-item-inner outer-shadow">
               <i class="fas fa-phone">
                 <span class="contact-span">Phone</span>
-                <p class="contact-p" style="font-family: Arial, Helvetica, sans-serif;">+92 3352074636</p>
+                <p
+                  class="contact-p"
+                  style="font-family: Arial, Helvetica, sans-serif"
+                >
+                  +92 3352074636
+                </p>
               </i>
             </div>
           </div>
           <!-- ========== End contact item ========== -->
           <!-- ========== Start contact item ========== -->
-          <div class="contact-item contact-card" data-tilt data-tilt-axis="x" data-tilt data-tilt-scale="1.1">
+          <div
+            class="contact-item contact-card"
+            data-tilt
+            data-tilt-axis="x"
+            data-tilt
+            data-tilt-scale="1.1"
+          >
             <div class="contact-item-inner outer-shadow">
               <i class="fas fa-envelope">
                 <span class="contact-span">Email Address</span>
-                <p class="contact-p" style="font-family: Arial, Helvetica, sans-serif;">abdullah.siddiqui13122002@gmail.com</p>
+                <p
+                  class="contact-p"
+                  style="font-family: Arial, Helvetica, sans-serif"
+                >
+                  abdullah.siddiqui13122002@gmail.com
+                </p>
               </i>
             </div>
           </div>
           <!-- ========== End contact item ========== -->
           <!-- ========== Start contact item ========== -->
-          <div class="contact-item contact-card" data-tilt data-tilt-axis="x" data-tilt data-tilt-scale="1.1">
+          <div
+            class="contact-item contact-card"
+            data-tilt
+            data-tilt-axis="x"
+            data-tilt
+            data-tilt-scale="1.1"
+          >
             <div class="contact-item-inner outer-shadow">
               <i class="fas fa-map-marker-alt">
                 <span class="contact-span">Address</span>
@@ -646,84 +1094,164 @@
         <!-- ========== Start contact from ========== -->
         <div class="row">
           <div class="contact-form">
-            <form action="" method="">
+            <form id="contact-form">
               <div class="row">
                 <div class="w-50">
                   <div class="input-group outer-shadow hover-in-shadow">
-                    <input class="input-control" type="text" name="name" id="name" placeholder="Name" required>
+                    <input
+                      class="input-control"
+                      type="text"
+                      name="name"
+                      id="name"
+                      placeholder="Name"
+                      required
+                    />
                   </div>
                   <div class="input-group outer-shadow hover-in-shadow">
-                    <input class="input-control" type="email" name="email" id="sender" placeholder="email" required>
+                    <input
+                      class="input-control"
+                      type="email"
+                      name="email"
+                      id="sender"
+                      placeholder="email"
+                      required
+                    />
                   </div>
                   <div class="input-group outer-shadow hover-in-shadow">
-                    <input class="input-control" type="tel" name="subject" id="subject" placeholder="Subject" required>
+                    <input
+                      class="input-control"
+                      type="text"
+                      name="subject"
+                      id="subject"
+                      placeholder="Subject"
+                      required
+                    />
                   </div>
                 </div>
                 <div class="w-50">
                   <div class="input-group outer-shadow hover-in-shadow">
-                    <textarea class="input-control" name="user_dtls" id="user_dtls" required placeholder="Type here..."></textarea>
+                    <textarea
+                      class="input-control"
+                      name="message"
+                      id="message"
+                      required
+                      placeholder="Type here..."
+                    ></textarea>
                   </div>
                 </div>
               </div>
               <div class="row">
                 <div class="submit-btn">
-                  <button class="btn-1 outer-shadow outer-shadw hover-in-shadow submit">Send Message</button>
+                  <button
+                    class="btn-1 outer-shadow outer-shadw hover-in-shadow submit"
+                  >
+                    Send Message
+                  </button>
                 </div>
               </div>
             </form>
           </div>
         </div>
         <!-- ========== End contact from ========== -->
+        <!-- <script>
+          document.getElementById('contact-form').addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevent the default form submission
+
+  emailjs.sendForm('service_1kej3ht', 'template_g5w6k85', this)
+    .then(function(response) {
+      console.log('SUCCESS!', response.status, response.text);
+      alert('Your message has been sent successfully!');
+    }, function(error) {
+      console.error('FAILED...', error);
+      alert('Failed to send message, please try again later.');
+    });
+});
+
+         </script> -->
+        <!-- <script>
+  document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    emailjs.sendForm('service_1kej3ht', 'template_867zh2x', this)
+      .then(function() {
+        alert('Your message has been sent successfully!');
+      }, function(error) {
+        alert('Failed to send message, please try again later.');
+      });
+  });
+</script> -->
       </div>
     </section>
     <!-- ========== End contact section ========== -->
 
     <!-- ========== Start portfolio popup ========== -->
-        <div class="pp portfolio-popup">
-          <div class="pp-details">
-            <div class="pp-details-inner">
-              <div class="pp-title">
-                <h2>personal portfolio</h2>
-                <p>Category - <span class="pp-project-category">Web Application</span></p>
-              </div>
-              <div class="pp-project-details">
-                <div class="row">
-                  <div class="description">
-                    <h3>Project brief: </h3>
-                    <p>Lorem ipsum dolor, sit Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem perferendis corporis culpa! amet consectetur adipisicing elit. Hic doloribus labore assumenda nostrum commodi. Officia. Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt.</p>
-                  </div>
-                  <div class="info">
-                    <h3>Project info</h3>
-                    <ul>
-                      <li>Date - <span>2021</span></li>
-                      <li>Client - <span>xyz</span></li>
-                      <li>Tools - <span>html, css, js</span></li>
-                      <li>Web - <span><a href="#" id="link" id="link" target="_next">www.morsed.com/project_name</a></span></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
+    <div class="pp portfolio-popup">
+      <div class="pp-details">
+        <div class="pp-details-inner">
+          <div class="pp-title">
+            <h2>personal portfolio</h2>
+            <p>
+              Category -
+              <span class="pp-project-category">Web Application</span>
+            </p>
           </div>
-
-          <div class="separator"></div>
-
-          <div class="pp-main">
-            <div class="pp-main-inner">
-              <div class="pp-project-details-btn outer-shadow hover-in-shadow">Project Details<i class="fas fa-plus"></i></div>
-              <div class="pp-close outer-shadow hover-in-shadow">&times;</div>
-              <img src="img/portfolio/large/project-1/1.png" alt="img" class="pp-img outer-shadow">
-              <div class="pp-counter">1 of 6</div>
+          <div class="pp-project-details">
+            <div class="row">
+              <div class="description">
+                <h3>Project brief:</h3>
+                <p>
+                  Lorem ipsum dolor, sit Lorem ipsum dolor sit amet consectetur
+                  adipisicing elit. Quidem perferendis corporis culpa! amet
+                  consectetur adipisicing elit. Hic doloribus labore assumenda
+                  nostrum commodi. Officia. Lorem ipsum dolor sit amet
+                  consectetur adipisicing elit. Incidunt.
+                </p>
+              </div>
+              <div class="info">
+                <h3>Project info</h3>
+                <ul>
+                  <li>Date - <span>2021</span></li>
+                  <li>Client - <span>xyz</span></li>
+                  <li>Tools - <span>html, css, js</span></li>
+                  <li>
+                    Web -
+                    <span
+                      ><a href="#" id="link" id="link" target="_next"
+                        >www.morsed.com/project_name</a
+                      ></span
+                    >
+                  </li>
+                </ul>
+              </div>
             </div>
-            <div class="pp-loader">
-              <div class="loader"></div>
-            </div>
-            <!-- ========== Start pp navigation ========== -->
-            <div class="pp-pre"><i class="fas fa-play"></i></div>
-            <div class="pp-next"><i class="fas fa-play"></i></div>
-            <!-- ========== End pp navigation ========== -->
           </div>
         </div>
+      </div>
+
+      <div class="separator"></div>
+
+      <div class="pp-main">
+        <div class="pp-main-inner">
+          <div class="pp-project-details-btn outer-shadow hover-in-shadow">
+            Project Details<i class="fas fa-plus"></i>
+          </div>
+          <div class="pp-close outer-shadow hover-in-shadow">&times;</div>
+          <img
+            src="img/portfolio/large/project-1/1.png"
+            alt="img"
+            class="pp-img outer-shadow"
+          />
+          <div class="pp-counter">1 of 6</div>
+        </div>
+        <div class="pp-loader">
+          <div class="loader"></div>
+        </div>
+        <!-- ========== Start pp navigation ========== -->
+        <div class="pp-pre"><i class="fas fa-play"></i></div>
+        <div class="pp-next"><i class="fas fa-play"></i></div>
+        <!-- ========== End pp navigation ========== -->
+      </div>
+    </div>
     <!-- ========== End portfolio popup ========== -->
 
     <!-- ========== Start style switciher start - for demo pirposs only ========== -->
@@ -747,8 +1275,8 @@
     <!-- ========== End style switciher start - for demo pirposs only ========== -->
     <!-- main js -->
     <script src="js/main.js"></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/typed.js/1.1.4/typed.min.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/1.1.4/typed.min.js"></script>
     <!-- style switcher js -->
     <script src="js/style-switcher.js"></script>
     <script src="js/animation.js"></script>
@@ -758,18 +1286,19 @@
     <script>
       VanillaTilt.init(document.querySelectorAll(".contact-card"), {
         max: 25,
-        speed: 400
+        speed: 400,
       });
 
       VanillaTilt.init(document.querySelectorAll(".link-card"), {
         max: 25,
-        speed: 400
+        speed: 400,
       });
 
-      VanillaTilt.init(document.querySelectorAll(".card")),{
-        max: 25,
-        speed: 300
-      };
+      VanillaTilt.init(document.querySelectorAll(".card")),
+        {
+          max: 25,
+          speed: 300,
+        };
     </script>
   </body>
 </html>
